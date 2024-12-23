@@ -1,0 +1,73 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[parfill]{parskip}
+\usepackage[a4paper, margin=1in]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[slovene]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{listings}
+
+\newtheorem{definicija}{Definicija}
+
+
+\title{Racionalne Bézierjeve ploskve}
+
+\author{Eva Rudolf, Sara Conta}
+\date{23.\ 12.\ 2024}
+
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Uvod}
+
+Bézierjeve racionalne ploskve so eno od ključnih orodij, ki se uporabljajo v računalniško podprtem oblikovanju (CAD), računalniški grafiki in inženirstvu. Predstavljajo razširitev klasičnih Bézierjevih ploskev, pri čemer uvedba uteži kontrolnih točk omogoča modeliranje kompleksnejših oblik, kot so krogle, stožci in druge kvadratične površine. Zaradi te prilagodljivosti in matematične elegance so racionalne Bézierjeve ploskve nepogrešljive pri opisovanju in obdelavi geometrijskih objektov. V tej seminarski nalogi bova predstavili osnove teh ploskev, razložili delovanje de Casteljaujevega algoritma ter raziskali njihove praktične uporabe.
+
+\section{Definicija}
+
+Spomnimo se najprej definicije ploskve.
+
+\begin{definicija}
+    Parametrično podana ploskev v prostoru $\mathbb{R} ^ 3$ je množica točk $ \{ \textbf{r} (u,v), (u,v) \in \Omega \subseteq \mathbb{R}^2 \} $, podana s parametrizacijo $\mathbf{r} : \Omega \rightarrow \mathbb{R}^3$, 
+    $$
+    \mathbf{r} (u,v) = (x(u,v), y(u,v), z(u,v)).
+    $$
+\end{definicija}
+
+Racionalna Bézierjeva ploskev je parametrizirana ploskev v računalniški geometriji, definirana z uteženimi kontrolnimi točkami in Bézierjevimi baznimi funkcijami. Je posplošitev klasičnih Bézierjevih ploskev, njihova definicija pa sledi istim načelom kot racionalne Bézierjeve krivulje. Racionalna Bézierjeva ploskev v prostoru $\mathbb{R}^3$ je projekcija Bézierjeve ploskve v $\mathbb{R}^4$ na hiperravnino $\omega = 1$, ker točko v $\mathbb{R}^4$ označimo z $(\mathbf{x}, \beta) = (x_1, x_2, x_3, \beta)$.
+
+Velja, da se točke z $\beta = 0$ preslikajo v točke v neskončnosti.
+
+\begin{definicija}
+    Racionalna Bézierjeva ploskev stopnje $(n, m)$ je podana kot razmerje dveh polinomskih funkcij s parametrizacijo $\mathbf{r}: [0,1] \rightarrow \mathbb{R}^3$:
+    $$
+    \mathbf{r} (u, v) = \frac{ \sum_{i=0}^{n} \sum_{k=0}^{m} \beta_{ik} \mathbb{b}_{ik} B_i^{n} (u) B_k^{n} (v) }{ \sum_{i=0}^{n} \sum_{k=0}^{m} \beta_{ik} B_i^{n} (u) B_k^{n} (v) } ,
+    $$
+    kjer so $\beta_{ik} \in \mathbb{R}$ uteži, $\mathbf{b}_{ik} \in \mathbb{R}^3$ kontrolne točke in $B_i^{n} (u), B_k^{n} (v)$ Bézierjevi bazni polinomi.
+\end{definicija}
+
+Kot pri racionalnih Bézierjevih krivuljah, lahko tudi tu izpeljemo, da lahko dve izmed uteži nastavimo na vrednost 1.
+
+
+\begin{thebibliography}{9}
+    \bibitem{hoschek}
+    J. Hoschek, D. Lasser: Fundamentals of Computer Aided geometric design,
+    Wellesley (Massachusetts): A. K. Peters, 1993, strani 316 $-$ 329.
+
+    \bibitem{zapiski} 
+    Zapiski predavanj pri predmetu Računalniško podprto geometrijsko oblikovanje.
+\end{thebibliography}
+
+\end{document}
