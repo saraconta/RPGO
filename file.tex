@@ -35,7 +35,7 @@
 
 Bézierjeve racionalne ploskve so eno od ključnih orodij, ki se uporabljajo v računalniško podprtem oblikovanju (CAD), računalniški grafiki in inženirstvu. Predstavljajo razširitev klasičnih Bézierjevih ploskev, pri čemer uvedba uteži kontrolnih točk omogoča modeliranje kompleksnejših oblik, kot so krogle, stožci in druge kvadratične površine. Zaradi te prilagodljivosti in matematične elegance so racionalne Bézierjeve ploskve nepogrešljive pri opisovanju in obdelavi geometrijskih objektov. V tej seminarski nalogi bova predstavili osnove teh ploskev, razložili delovanje de Casteljaujevega algoritma ter raziskali njihove praktične uporabe.
 
-\section{Definicija}
+\section{Racionalne Bézierjeve ploskve iz tenzorskega produkta}
 
 Spomnimo se najprej definicije ploskve.
 
@@ -51,7 +51,7 @@ Racionalna Bézierjeva ploskev je parametrizirana ploskev v računalniški geome
 Velja, da se točke z $\beta = 0$ preslikajo v točke v neskončnosti.
 
 \begin{definicija}
-    Racionalna Bézierjeva ploskev stopnje $(n, m)$ je podana kot razmerje dveh polinomskih funkcij s parametrizacijo $\mathbf{r}: [0,1] \rightarrow \mathbb{R}^3$:
+    Racionalna Bézierjeva ploskev stopnje $(n, m)$ iz tenzorskega produkta je podana kot razmerje dveh polinomskih funkcij s parametrizacijo $\mathbf{r}: [0,1] \rightarrow \mathbb{R}^3$:
     $$
     \mathbf{r} (u, v) = \frac{ \sum_{i=0}^{n} \sum_{k=0}^{m} \beta_{ik} \mathbb{b}_{ik} B_i^{n} (u) B_k^{n} (v) }{ \sum_{i=0}^{n} \sum_{k=0}^{m} \beta_{ik} B_i^{n} (u) B_k^{n} (v) } ,
     $$
@@ -60,6 +60,19 @@ Velja, da se točke z $\beta = 0$ preslikajo v točke v neskončnosti.
 
 Kot pri racionalnih Bézierjevih krivuljah lahko tudi tu eno izmed uteži nastavimo na vrednost 1. Na robovih $U=0$ in $v=0$ lahko na vrednost 1 nastavimo celo dve uteži.
 
+\subsection{Lastnosti racionalnih Bézierjevih ploskev iz tenzorskega produkta}
+
+Lastnosti racionalnih Bézierjevih krivulj držijo tudi v primeru ploskev. Velja:
+
+\begin{enumerate}
+    \item Parametrizacija racionalnih Bézierjevij ploskev je afino invariantna.
+    \item Racionalna Bézierjeva ploskev leži v konveksi ogrinjači svojih kontrolnih točk.
+    \item Ko red parametrizacije narašča, se ta parametrizacija vedno bolj približuje dejanski ploskvi.
+\end{enumerate}
+
+\section{Racionalne Trikotne Bézierjeve ploskve}
+
+\section{De Casteljaujev algoritem}
 
 \begin{thebibliography}{9}
     \bibitem{hoschek}
