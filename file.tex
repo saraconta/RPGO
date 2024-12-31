@@ -17,6 +17,8 @@
 \usepackage{listings}
 
 \newtheorem{definicija}{Definicija}
+\newtheorem{opomba}{Opomba}
+\newtheorem{primer}{Primer}
 
 
 \title{Racionalne Bézierjeve ploskve}
@@ -58,7 +60,11 @@ Velja, da se točke z $\beta = 0$ preslikajo v točke v neskončnosti.
     kjer so $\beta_{ik} \in \mathbb{R}$ uteži, $\mathbf{b}_{ik} \in \mathbb{R}^3$ kontrolne točke in $B_i^{n} (u), B_k^{n} (v)$ Bézierjevi bazni polinomi.
 \end{definicija}
 
-Kot pri racionalnih Bézierjevih krivuljah lahko tudi tu eno izmed uteži nastavimo na vrednost 1. Na robovih $U=0$ in $v=0$ lahko na vrednost 1 nastavimo celo dve uteži.
+Kot pri racionalnih Bézierjevih krivuljah lahko tudi tu eno izmed uteži nastavimo na vrednost 1. Na robovih $U=0$ in $v=0$ lahko na vrednost 1 nastavimo celo dve uteži. % morda dodamo izpeljavo za to lastnost
+
+\begin{opomba}
+    Formula v definiciji opisuje racionalno Bézierjevo ploskev iz tenzorskega produkta, vendar je v resnici ne moremo zapisati kot produkt dveh faktorjev, zato strogo gledano formula ne predstavlja ploskve iz tenzorskega produkta.
+\end{opomba}
 
 \subsection{Lastnosti racionalnih Bézierjevih ploskev iz tenzorskega produkta}
 
@@ -69,6 +75,46 @@ Lastnosti racionalnih Bézierjevih krivulj držijo tudi v primeru ploskev. Velja
     \item Racionalna Bézierjeva ploskev leži v konveksi ogrinjači svojih kontrolnih točk.
     \item Ko red parametrizacije narašča, se ta parametrizacija vedno bolj približuje dejanski ploskvi.
 \end{enumerate}
+
+\subsection{Valj}
+
+Naj bo $(m, n) = (2, 1)$. Naj bosta nadalje Bézierjevi točki $B_{10}$ in $B_{11}$ točki v neskončnosti, torej $\beta_{10} = \beta_{11} = 0$. Tako velja, da so parametrične krivulje $v = konst$ ravne črte in parametrične krivulje $u = konst$ elipse. 
+
+\begin{primer}
+    Naj bo $\beta_{ij} = 1 \hspace{0.2cm} \forall i, j$. Racionalna Bézierjeva ploskev, zapisana z enačbo $$
+    \textbf{X} (u, v) = \frac{1}{N} \left[ b_{00} B_0^2(u) B_0^1(v) + b_{20} B_2^2(u) B_0^1(v) + 
+    b_{01} B_0^2(u) B_1^1(v) + 
+    b_{21} B_2^2(u) B_1^1(v) + 
+    \vec{b}_{10} B_1^2(u) B_0^1(v) + 
+    \vec{b}_{11} B_1^2(u) B_1^1(v) \right],
+    $$ 
+    kjer 
+    $$
+    N = B_0^2(u) B_0^1(v) + B_2^2(u) B_0^1(v) + 
+    B_0^2(u) B_1^1(v) + B_2^2(u) B_1^1(v),
+    $$ 
+    predstavlja pol valja, ki ima za osnovno ploskev elipso.
+\end{primer}
+
+\begin{primer}
+    V splošnem lahko zapišemo valj, ki ima za osnovno ploskev krog, z enačbami
+    \begin{align*}
+        b_{00} &= (r, 0, 0)^T \\
+        b_{01} &= (r, 0, h)^T \\
+        b_{20} &= (-r, 0, 0)^T \\
+        b_{21} &= (-r, 0, h)^T \\
+        \vec{b}_{10} &= (0, r, 0)^T \\
+        \vec{b}_{11} &= (0, r, 0)^T,
+    \end{align*} 
+    kjer $r$ predstavlja polmer kroga in $h$ višino valja.
+    Drugo polovico valja dobimo, če določimo $\vec{b}_{10} = \vec{b}_{11} = (0, -r, 0)^{T}$.
+\end{primer}
+
+\subsection{Torus}
+
+\subsection{Rotacijska ploskev}
+
+\subsection{Krogla}
 
 \section{Racionalne Trikotne Bézierjeve ploskve}
 
